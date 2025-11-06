@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce4lhvyxkehq4"]
+
+[ext_resource type="PackedScene" uid="uid://cr1j4wnqskdb1" path="res://scenes/player.tscn" id="1_nnsk1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
+
+[sub_resource type="Sky" id="Sky_rwgxs"]
+sky_material = SubResource("ProceduralSkyMaterial_nnsk1")
+
+[sub_resource type="Environment" id="Environment_4wyf3"]
+background_mode = 2
+sky = SubResource("Sky_rwgxs")
+
+[node name="World" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(100, 1, 100)
+
+[node name="Player" parent="." instance=ExtResource("1_nnsk1")]
+
+[node name="Skeleton3D" parent="Player/RootNode/CharacterArmature" index="0"]
+bones/5/rotation = Quaternion(-0.00028458337, 5.267766e-07, 1.8166122e-05, 1)
+bones/7/rotation = Quaternion(-0.016333364, -0.0002754256, 8.0166574e-05, 0.9998666)
+bones/9/rotation = Quaternion(0.67016596, -0.40593848, -0.3868994, -0.48621032)
+bones/10/rotation = Quaternion(-0.1224505, -0.029353162, -0.18434727, 0.97476166)
+bones/13/rotation = Quaternion(-0.04044292, -0.03209394, 0.0671616, 0.9964054)
+bones/14/rotation = Quaternion(-0.07888411, 0.0116812885, 0.025060762, 0.9965004)
+bones/17/rotation = Quaternion(-0.08979643, 0.025393257, -0.006117526, 0.99561757)
+bones/18/rotation = Quaternion(-0.12012525, 0.0061711944, -0.018863123, 0.9925603)
+bones/21/rotation = Quaternion(-0.0819329, 0.16051696, -0.03655427, 0.9829472)
+bones/22/rotation = Quaternion(-0.11816421, 0.040226366, -0.04146295, 0.9913122)
+bones/29/rotation = Quaternion(0.026724113, -0.12638462, 0.084911294, 0.9879792)
+bones/30/rotation = Quaternion(-0.10503019, -0.05490278, 0.13147657, 0.9842095)
+bones/32/rotation = Quaternion(-0.62224114, -0.3090999, -0.43750274, 0.5708454)
+bones/33/rotation = Quaternion(-0.20794193, -0.1934713, 0.3238833, 0.90245706)
+bones/52/rotation = Quaternion(0.021794662, 0.13045122, -0.08516788, 0.9875495)
+bones/53/rotation = Quaternion(-0.14201783, 0.056628507, -0.12824592, 0.97988635)
+bones/54/rotation = Quaternion(-0.5358569, 0.018369569, 0.836216, -0.115164556)
+bones/55/rotation = Quaternion(0.18000647, 0.6838109, -0.18000636, 0.6838115)
+bones/56/rotation = Quaternion(0.5557593, 0.1219707, 0.8058571, 0.16385724)
+bones/57/rotation = Quaternion(0.15994808, -0.6887789, 0.15994798, 0.6887794)
+
+[node name="Head" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="0"]
+transform = Transform3D(0.99998456, -0.0023943267, -0.004985759, -0.005163413, -0.08100441, -0.9967, 0.0019825497, 0.9967108, -0.08101558, 3.903368e-05, -0.000922229, 0.015472649)
+
+[node name="Index4_L" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="1"]
+transform = Transform3D(-0.06402119, -0.1711084, 0.9831698, -0.99787056, 0.023243777, -0.060933147, -0.0124263065, -0.9849777, -0.17223218, 0.0026885301, -0.0005870012, 0.007994245)
+
+[node name="Middle4_L" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="2"]
+transform = Transform3D(-0.06865932, -0.25964782, 0.96325934, -0.9969958, -0.016820055, -0.075597845, 0.035830997, -0.9655571, -0.2577131, 0.0027261612, -0.00029285366, 0.007818071)
+
+[node name="Ring4_L" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="3"]
+transform = Transform3D(-0.33992395, -0.39662945, 0.8527226, -0.93850756, 0.20134605, -0.280468, -0.060450535, -0.89562535, -0.44068235, 0.0026664361, 9.18883e-05, 0.008009156)
+
+[node name="Pinky4_L" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="4"]
+transform = Transform3D(-0.0409619, -0.5064948, 0.86126924, -0.99327546, 0.11405739, 0.019834854, -0.10828022, -0.854666, -0.50776136, 0.0026315926, 0.00025157953, 0.008250461)
+
+[node name="Thumb3_L" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="5"]
+transform = Transform3D(-0.13829568, -0.08743326, 0.98652387, -0.95876986, -0.2378709, -0.15548697, 0.2482603, -0.9673534, -0.050931796, 0.002549793, -0.001030795, 0.008914664)
+
+[node name="Index4_R" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="6"]
+transform = Transform3D(-0.35549363, 0.322409, -0.87731165, 0.8832987, -0.19103056, -0.4281228, -0.3056244, -0.9271237, -0.21687323, -0.0019505324, -0.0022626414, 0.008318477)
+
+[node name="Middle4_R" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="7"]
+transform = Transform3D(-0.35918537, 0.35638645, -0.8625393, 0.91031975, -0.0698911, -0.4079604, -0.20567551, -0.93172085, -0.29932165, -0.0020858762, -0.0019495666, 0.008032118)
+
+[node name="Ring4_R" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="8"]
+transform = Transform3D(-0.60591346, 0.43134224, -0.6684403, 0.7561576, 0.051207226, -0.6523821, -0.24717098, -0.900734, -0.35718977, -0.00215141, -0.0016454377, 0.008118557)
+
+[node name="Pinky4_R" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="9"]
+transform = Transform3D(-0.34504402, 0.5558226, -0.7563105, 0.91489434, 0.019270182, -0.40323147, -0.20955114, -0.83107746, -0.51516813, -0.0021963913, -0.0014207739, 0.008298684)
+
+[node name="Thumb3_R" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="10"]
+transform = Transform3D(-0.33970508, 0.41975516, -0.84166825, 0.63461554, -0.5581767, -0.53450954, -0.69416314, -0.71571195, -0.0767674, -0.0017695213, -0.002456814, 0.009527243)
+
+[node name="LowerLeg_L" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="11"]
+transform = Transform3D(0.60591096, -0.18056144, -0.77475744, 0.7900793, 0.25008017, 0.55964357, 0.09269906, -0.95123917, 0.29419196, 0.0021279517, -0.0001308494, 0.005065004)
+
+[node name="LowerLeg_R" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="12"]
+transform = Transform3D(0.9932371, 0.00915101, -0.11551318, 0.11496726, 0.04650093, 0.99227977, 0.014451466, -0.9988762, 0.04513545, -0.00073149754, -0.0026969651, 0.005308559)
+
+[node name="Node3D" parent="Player" index="3" node_paths=PackedStringArray("bodyNode")]
+bodyNode = NodePath("..")
+cameraPanSpeed = 2.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4wyf3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.8660254, 0.50000006, 0, -0.50000006, -0.8660254, 0, 0, 0)
+
+[editable path="Player"]
