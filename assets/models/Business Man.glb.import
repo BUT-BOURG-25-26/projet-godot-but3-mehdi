@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://jg4nbv4g0enj"
-path="res://.godot/imported/Business Man.glb-54f5ae1d022446065ccf0793a43647ae.scn"
+path="res://.godot/imported/Business Man.glb-81b7a9c998d06481f9cc20977bbfbd5f.scn"
 
 [deps]
 
-source_file="res://assets/Business Man.glb"
-dest_files=["res://.godot/imported/Business Man.glb-54f5ae1d022446065ccf0793a43647ae.scn"]
+source_file="res://assets/models/Business Man.glb"
+dest_files=["res://.godot/imported/Business Man.glb-81b7a9c998d06481f9cc20977bbfbd5f.scn"]
 
 [params]
 
