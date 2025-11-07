@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dl82pnwf3h2cg"]
 
-[ext_resource type="PackedScene" uid="uid://jg4nbv4g0enj" path="res://assets/Business Man.glb" id="1_hsp5f"]
+[ext_resource type="PackedScene" uid="uid://jg4nbv4g0enj" path="res://assets/models/Business Man.glb" id="1_hsp5f"]
 
 [node name="BusinessCharacter" instance=ExtResource("1_hsp5f")]
 

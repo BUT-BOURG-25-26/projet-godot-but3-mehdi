@@ -12,9 +12,9 @@ func _input(event: InputEvent) -> void:
 		var delta = event.relative
 		
 		var newY = bodyNode.rotation_degrees.y + (-delta.x * cameraPanSpeed)
-		var newX = bodyNode.rotation_degrees.x + (delta.y * cameraPanSpeed)
+		var newX = rotation_degrees.x + (delta.y * cameraPanSpeed)
 		
-		newX = clampf(newX, -60, 60)
+		newX = clampf(newX, -35, 50)
 		
 		bodyNode.rotation_degrees = Vector3(0, newY, 0)
 		
