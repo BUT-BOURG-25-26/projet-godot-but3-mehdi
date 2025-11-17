@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ce4lhvyxkehq4"]
+[gd_scene load_steps=8 format=3 uid="uid://ce4lhvyxkehq4"]
 
 [ext_resource type="PackedScene" uid="uid://cr1j4wnqskdb1" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://c373l33fx36xe" path="res://scenes/spider.tscn" id="2_rwgxs"]
+[ext_resource type="Script" uid="uid://d1hqs513i1l2u" path="res://scripts/wave_manager.gd" id="3_4wyf3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 
@@ -20,20 +21,90 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [node name="Player" parent="." instance=ExtResource("1_nnsk1")]
 
+[node name="Skeleton3D" parent="Player/RootNode/CharacterArmature" index="0"]
+bones/1/rotation = Quaternion(3.7573883e-32, 0.23553042, -1.5503758e-31, 0.97186697)
+bones/4/rotation = Quaternion(0.085464716, -0.23748349, 0.011578177, 0.96755534)
+bones/5/rotation = Quaternion(0.0019963246, 3.4912006e-07, 7.597074e-06, 0.99999803)
+bones/7/rotation = Quaternion(-0.021147568, -0.00027552433, 0.00010379275, 0.99977636)
+bones/9/rotation = Quaternion(0.6728788, -0.40480536, -0.38749003, -0.48292682)
+bones/10/rotation = Quaternion(-0.12200205, -0.02943797, -0.18433373, 0.97481793)
+bones/13/rotation = Quaternion(-0.04060957, -0.032113172, 0.06711767, 0.996401)
+bones/14/rotation = Quaternion(-0.07895457, 0.011671758, 0.02505792, 0.9964949)
+bones/17/rotation = Quaternion(-0.089862764, 0.025407897, -0.0061307466, 0.9956112)
+bones/18/rotation = Quaternion(-0.12023124, 0.006196376, -0.01885723, 0.9925475)
+bones/21/rotation = Quaternion(-0.0819329, 0.16051698, -0.036554273, 0.9829472)
+bones/22/rotation = Quaternion(-0.118164204, 0.040226366, -0.04146295, 0.9913122)
+bones/29/rotation = Quaternion(0.035691522, -0.123776644, 0.08507538, 0.988012)
+bones/30/rotation = Quaternion(-0.09520712, -0.055323374, 0.1258136, 0.9859239)
+bones/31/rotation = Quaternion(-0.47496143, 0.84561604, 0.046087492, 0.23920955)
+bones/32/rotation = Quaternion(-0.77484256, 0.1840606, -0.06506182, 0.6012552)
+bones/33/rotation = Quaternion(-0.018172786, 0.01114809, 0.21277574, 0.9768685)
+bones/34/rotation = Quaternion(0.010541522, -0.02121429, -0.039322127, 0.9989458)
+bones/41/rotation = Quaternion(-0.58199775, 0.099855006, -0.031193893, 0.8064333)
+bones/45/rotation = Quaternion(-0.43896022, -0.077744566, 0.23521324, 0.8636808)
+bones/46/rotation = Quaternion(-0.5510799, -0.012790814, 0.29939362, 0.7787881)
+bones/50/rotation = Quaternion(-0.5326957, 0.05845074, 0.039301153, 0.84337085)
+bones/54/rotation = Quaternion(-0.5357915, 0.01956607, 0.83595777, -0.1171293)
+bones/55/rotation = Quaternion(0.18299024, 0.6830185, -0.18299012, 0.6830191)
+bones/56/rotation = Quaternion(0.55542463, 0.123512164, 0.8054036, 0.16605191)
+bones/57/rotation = Quaternion(0.16331653, -0.68798786, 0.16331643, 0.68798846)
+
+[node name="Head" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="0"]
+transform = Transform3D(0.99998444, -0.0023952853, -0.004998175, -0.005165752, -0.07595168, -0.9970977, 0.0020087073, 0.9971085, -0.075962946, 3.903665e-05, -0.0009317291, 0.015471426)
+
+[node name="Index4_L" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="1"]
+transform = Transform3D(-0.06386025, -0.17942944, 0.9816955, -0.9978198, 0.02785598, -0.05981765, -0.016612915, -0.9833761, -0.18081726, 0.002638681, -0.00056060206, 0.00798543)
+
+[node name="Middle4_L" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="2"]
+transform = Transform3D(-0.068183765, -0.26766446, 0.9610961, -0.99717104, -0.012235394, -0.07415048, 0.031607006, -0.96343434, -0.2660732, 0.0026748937, -0.00026555712, 0.007810398)
+
+[node name="Ring4_L" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="3"]
+transform = Transform3D(-0.34015757, -0.40380305, 0.84925544, -0.93830466, 0.20553492, -0.27809736, -0.06225507, -0.8914584, -0.4488049, 0.0026167869, 0.000118246746, 0.0080037685)
+
+[node name="Pinky4_L" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="4"]
+transform = Transform3D(-0.04157226, -0.51331645, 0.85719126, -0.992755, 0.11801835, 0.022526953, -0.112727545, -0.85004556, -0.5145045, 0.0025838264, 0.00027676558, 0.008246109)
+
+[node name="Thumb3_L" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="5"]
+transform = Transform3D(-0.13226178, -0.060507625, 0.989366, -0.95632875, -0.2546831, -0.14342117, 0.2606533, -0.9651293, -0.024180189, 0.0025131318, -0.0010103859, 0.008906167)
+
+[node name="Index4_R" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="6"]
+transform = Transform3D(0.011344157, 0.9984565, 0.05435659, -0.35134646, 0.054873943, -0.93463445, -0.93617624, -0.0084955245, 0.3514273, -1.8612882e-05, -0.0068962895, 0.014674186)
+
+[node name="Middle4_R" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="7"]
+transform = Transform3D(-0.24430722, 0.1058256, 0.96390563, -0.1255374, 0.98220915, -0.13965341, -0.9615371, -0.15512489, -0.22667615, 0.00029753166, -0.0067407736, 0.014311329)
+
+[node name="Ring4_R" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="8"]
+transform = Transform3D(0.43548042, 0.36454445, 0.8230817, -0.25164866, 0.9271793, -0.2775057, -0.8643085, -0.08627954, 0.495506, 0.00020429057, -0.006744714, 0.014089747)
+
+[node name="Pinky4_R" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="9"]
+transform = Transform3D(-0.06403516, 0.83840156, 0.5412774, -0.12471561, 0.53141475, -0.83787966, -0.99012357, -0.12115988, 0.07053266, 5.6551406e-05, -0.0066913804, 0.013851061)
+
+[node name="Thumb3_R" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="10"]
+transform = Transform3D(-0.8932353, 0.20893905, -0.39808795, -0.043977104, -0.9218083, -0.38514012, -0.44743222, -0.32651442, 0.8325816, 0.00025084877, -0.005906441, 0.014470168)
+
+[node name="LowerLeg_L" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="11"]
+transform = Transform3D(0.60585874, -0.1836909, -0.7740627, 0.79010785, 0.2524349, 0.55854505, 0.092798464, -0.95001733, 0.29808336, 0.0021435316, -0.00014270321, 0.005069349)
+
+[node name="LowerLeg_R" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="12"]
+transform = Transform3D(0.9932349, 0.00869667, -0.115567334, 0.11498079, 0.050778013, 0.99206847, 0.014495573, -0.9986718, 0.049435746, -0.0007289389, -0.0027185404, 0.0053181066)
+
+[node name="HandAttachement" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="21"]
+transform = Transform3D(-0.15544984, 0.2395696, -0.95835316, -0.1755572, -0.9614024, -0.2118555, -0.97211856, 0.13531317, 0.19150844, -0.00054575567, -0.004900624, 0.014123404)
+
+[node name="HipAttachement" parent="Player/RootNode/CharacterArmature/Skeleton3D" index="22"]
+transform = Transform3D(0.09932977, 0.059709363, 0.99323475, -0.90904707, -0.40051392, 0.11498162, 0.4046808, -0.91434264, 0.014495266, -0.000987468, -0.0009843983, 0.009277021)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4wyf3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.8660254, 0.50000006, 0, -0.50000006, -0.8660254, 0, 0, 0)
 
-[node name="Spider" parent="." node_paths=PackedStringArray("player_target", "navigation_agent") instance=ExtResource("2_rwgxs")]
+[node name="Spider" parent="." node_paths=PackedStringArray("player_target") instance=ExtResource("2_rwgxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.990574)
 mass = 2.0
 angular_damp = 0.3
-maximum_velocity = 30.0
-velocity_change = 30.0
 player_target = NodePath("../Player")
-navigation_agent = NodePath("NavigationAgent3D")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_rwgxs")
@@ -43,5 +114,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
 size = Vector3(60, 1, 60)
 
+[node name="WaveManager" type="Node3D" parent="." node_paths=PackedStringArray("player_target")]
+script = ExtResource("3_4wyf3")
+player_target = NodePath("../Player")
+
+[node name="Timer" type="Timer" parent="WaveManager"]
+
+[connection signal="timeout" from="WaveManager/Timer" to="WaveManager" method="_on_timer_timeout"]
+
+[editable path="Player"]
 [editable path="Spider"]
 [editable path="Spider/SpiderModel"]

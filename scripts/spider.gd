@@ -1,7 +1,7 @@
 extends RigidBody3D
 
-@export var maximum_velocity : float
-@export var velocity_change : float
+@export var maximum_velocity : float = 30.0
+@export var velocity_change : float = 30.0
 @export var player_target : Node3D
 @export var navigation_agent : NavigationAgent3D
 

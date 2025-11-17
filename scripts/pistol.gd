@@ -2,12 +2,11 @@ extends Node3D
 
 var bullet : PackedScene = load("res://scenes/bullet.tscn")
 var instance : Node3D
-@onready var shoot_timer: Timer = $ShootTimer
 
-
-func _on_shoot_timer_timeout() -> void:
+func shoot():
+	print("tire")
+	print($RayCast3D.position,  global_transform.basis)
 	instance = bullet.instantiate()
-	instance.position = global_position
+	instance.position = $RayCast3D.position
 	instance.transform.basis = global_transform.basis
 	get_tree().current_scene.add_child(instance)
-	shoot_timer.start()

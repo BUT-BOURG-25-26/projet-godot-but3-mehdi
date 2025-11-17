@@ -3,19 +3,25 @@ extends CharacterBody3D
 @export var cameraContainer: Node3D
 
 @export var locomotionBlendPath: String
+@export var upperBodyStateMachinePlaybackPath : String
+var upperBodyStateMachinePlayback : AnimationNodeStateMachinePlayback
 
+@export var shootAnimationName : String
 @export var animationTree: AnimationTree
 @export var transitionSpeed: float = 0.1
 @export var speed: float = 5.0
 @export var rotationSpeed: float = 10
 
 var allowVelocityRotation: bool = true
+var jump_velocity = 4.5
 
 var currentInput: Vector2
 var currentVelocity: Vector2
 
+func _ready() -> void:
+	upperBodyStateMachinePlayback = animationTree.get(upperBodyStateMachinePlaybackPath) as AnimationNodeStateMachinePlayback
+
 func _process(delta):
-	
 	var newDelta = currentInput - currentVelocity
 	if (newDelta.length() > transitionSpeed * delta):
 		newDelta = newDelta * transitionSpeed * delta
@@ -24,11 +30,16 @@ func _process(delta):
 	
 	animationTree.set(locomotionBlendPath, currentVelocity)
 
+func _input(event: InputEvent) -> void:
+	if (event.is_action_pressed("shoot_left")):
+		upperBodyStateMachinePlayback.travel(shootAnimationName)
+
 func _physics_process(delta):
-	
 	if !is_on_floor():
 		velocity += get_gravity() * delta
-
+	elif Input.is_action_just_pressed("jump"):
+		velocity.y = 4.5
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	currentInput = Input.get_vector("left", "right", "up", "down")

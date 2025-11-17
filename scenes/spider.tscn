@@ -31,8 +31,9 @@ states/Walk/node = SubResource("AnimationNodeAnimation_algeo")
 states/Walk/position = Vector2(399, 100)
 transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_k5hg5"), "Walk", "Attack", SubResource("AnimationNodeStateMachineTransition_d613k"), "Attack", "Walk", SubResource("AnimationNodeStateMachineTransition_evcmw")]
 
-[node name="Spider" type="RigidBody3D"]
+[node name="Spider" type="RigidBody3D" node_paths=PackedStringArray("navigation_agent")]
 script = ExtResource("1_algeo")
+navigation_agent = NodePath("NavigationAgent3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4416504, 0.22232366)
