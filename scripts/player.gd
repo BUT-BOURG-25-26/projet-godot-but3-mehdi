@@ -12,7 +12,7 @@ var upperBodyStateMachinePlayback : AnimationNodeStateMachinePlayback
 @export var speed: float = 5.0
 @export var rotationSpeed: float = 10
 
-var allowVelocityRotation: bool = true
+var allowVelocityRotation: bool = false
 var jump_velocity = 4.5
 
 var currentInput: Vector2
