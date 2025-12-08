@@ -10,5 +10,5 @@ script = ExtResource("2_buff3")
 transform = Transform3D(-5.2453664e-09, 0, 0.12, 0, 0.12, 0, -0.12, 0, -5.2453664e-09, 0, 0, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.062951855, -0.1898919)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06557469, -0.28085107)
 target_position = Vector3(0, 0, -1)

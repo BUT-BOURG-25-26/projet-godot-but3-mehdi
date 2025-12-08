@@ -1,7 +1,7 @@
 extends RigidBody3D
 
-@export var maximum_velocity : float = 30.0
-@export var velocity_change : float = 30.0
+@export var maximum_velocity : float = 18.0
+@export var velocity_change : float = 18.0
 @export var player_target : Node3D
 @export var navigation_agent : NavigationAgent3D
 
@@ -22,3 +22,6 @@ func _physics_process(delta: float) -> void:
 	target_velocity = (target_velocity - linear_velocity) * velocity_change * delta
 	
 	constant_force = target_velocity
+	
+	if position.y < -200:
+		queue_free()
