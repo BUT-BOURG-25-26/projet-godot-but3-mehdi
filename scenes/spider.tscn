@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://c373l33fx36xe"]
+[gd_scene load_steps=11 format=3 uid="uid://c373l33fx36xe"]
 
 [ext_resource type="Script" uid="uid://c0x7pgw8p5nl2" path="res://scripts/spider.gd" id="1_algeo"]
 [ext_resource type="PackedScene" uid="uid://vqww5ixpgky" path="res://scenes/spider_model.tscn" id="1_c7em6"]
+[ext_resource type="Script" uid="uid://gjj5q0xq133a" path="res://scripts/damageable_object.gd" id="3_k5hg5"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_algeo"]
+radius = 1.0
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k5hg5"]
 animation = &"SpiderArmature|Spider_Attack"
@@ -141,5 +143,8 @@ parameters/conditions/walk = false
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_height_offset = 0.15
+
+[node name="DamageableObject" type="Node" parent="."]
+script = ExtResource("3_k5hg5")
 
 [editable path="SpiderModel"]
